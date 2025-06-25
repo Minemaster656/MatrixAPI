@@ -2,3 +2,5 @@ ollama
 colorama
 fastapi
 uvicorn
+sqlalchemy
+alembic

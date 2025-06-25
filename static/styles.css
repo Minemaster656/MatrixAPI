@@ -1,0 +1,14 @@
+body{
+    text-align: center;
+    background: #00b7ff;
+    /* background: linear-gradient(135deg, rgba(0, 183, 255, 1) 0%, rgba(227, 84, 213, 1) 100%); */
+    background: linear-gradient(135deg, rgb(0, 95, 133) 0%, rgb(112, 42, 105) 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: rgb(190, 190, 190);
+}
+.block{
+    background-color: rgb(49, 49, 49);
+    border: 2px solid gray;
+    border-radius: 10px;
+}
