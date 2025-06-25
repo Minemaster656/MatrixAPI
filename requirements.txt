@@ -1,0 +1,4 @@
+ollama
+colorama
+fastapi
+uvicorn
