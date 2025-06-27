@@ -1,18 +1,16 @@
-const testButton = document.getElementById("test-button")
-const testOutput = document.getElementById("test-output")
+const testButton = document.getElementById("test-button");
+const testOutput = document.getElementById("test-output");
 
-testButton.addEventListener("click", async ()=>{
+testButton.addEventListener("click", async () => {
     try {
-        const response = await fetch('/api/quack');
-            if (!response.ok) {
+        const response = await fetch("/api/quack");
+        if (!response.ok) {
             throw new Error(`Ошибка HTTP: ${response.status}`);
-            }
-            const data = await response.text(); // или .json(), если сервер возвращает JSON
-            testOutput.innerText = data;
+        }
+        const data = await response.text(); // или .json(), если сервер возвращает JSON
+        testOutput.innerText = data;
     } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-        testOutput.innerText = 'Ошибка: ' + error.message;
+        console.error("Ошибка при получении данных:", error);
+        testOutput.innerText = "Ошибка: " + error.message;
     }
-
-
-})
+});

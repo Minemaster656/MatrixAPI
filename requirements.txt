@@ -6,3 +6,4 @@ sqlalchemy
 alembic
 pgvector
 asyncio
+psycopg2-binary
