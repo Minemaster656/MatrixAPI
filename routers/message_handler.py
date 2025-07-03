@@ -29,4 +29,9 @@ async def websocket_endpoint(websocket: WebSocket):
             await logger.info(f"WebSocket disconnected: SessionUUID {current_session.UUID}")
 
 @router.post("/send")
-async def 
+async def handle_message(request: fastapi.Request):
+    data = await request.json()
+    message = data.get("message")
+    for client in globals.ACTIVE_SESSIONS:
+        await client.send_message(message)
+    return {"status": "Success"}

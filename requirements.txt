@@ -7,3 +7,4 @@ alembic
 pgvector
 asyncio
 psycopg2-binary
+websockets

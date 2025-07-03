@@ -15,4 +15,4 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def quack():
     return matrixapi.quack()
 
-uvicorn.run(app, port=33217)
+uvicorn.run(app, port=33217, host="0.0.0.0")
