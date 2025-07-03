@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1b3cdc8-a184-4253-8201-eaa430b2e95c" name="Changes" comment="шизуем на фронтенде">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/client_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/client_styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,11 +1,9 @@
-
 let httpProtocol = 'http://';
 let wsProtocol = 'ws://';
 if (window.location.protocol === 'https:') {
   httpProtocol = 'https://';
   wsProtocol = 'wss://';
 }
-
 
 const apiUrl = httpProtocol + window.location.host + '/api';
 const wsUrlGeneric = wsProtocol + window.location.host;
@@ -23,8 +21,8 @@ const send_button = document.getElementById("message-send");
 const message_field = document.getElementById("message-input");
 /** @type {HTMLDivElement} */
 const messages_container = document.getElementById("history");
+
 /**
- *
  * @param {String} message
  */
 function onSocketMessage(message) {
@@ -35,7 +33,7 @@ function onSocketMessage(message) {
 }
 
 function connect() {
-    socket = new WebSocket(wsUrlGeneric+"/api/msg/ws");
+    socket = new WebSocket(wsUrlGeneric + "/api/msg/ws");
 
     socket.onopen = function () {
         console.log("Соединение установлено");
@@ -72,6 +70,7 @@ function connect() {
 
 // Запуск соединения
 connect();
+
 /**
  * Send a message with WebSocket
  * @param {Object} msg
@@ -82,8 +81,8 @@ function sendMessageBySocket(msg) {
     }
     socket.send(msg);
 }
+
 /**
- * 
  * @param {String} msg 
  */
 function sendMessage(msg) {
@@ -106,4 +105,12 @@ function sendMessage(msg) {
 send_button.addEventListener("click", () => {
     sendMessage(message_field.value);
     message_field.value = "";
+});
+
+message_field.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey && !event.ctrlKey) {
+        event.preventDefault();
+        sendMessage(message_field.value);
+        message_field.value = "";
+    }
 });

@@ -8,10 +8,16 @@
     --bordercolor-inactive: #695c74;
     --borderradius: 10px;
     --bordersize: 2px;
+    --color: #bbc0ca;
 }
 html {
     background-color: var(--bgcolor);
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--color);
+}
+body{
+    background-color: var(--bgcolor);
+    color: var(--color);
 }
 #message-block {
     display: flex;
