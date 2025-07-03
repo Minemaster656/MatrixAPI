@@ -5,14 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1b3cdc8-a184-4253-8201-eaa430b2e95c" name="Changes" comment="шизуем на фронтенде">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/message_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/message_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/netcore/sessions.py" beforeDir="false" afterPath="$PROJECT_DIR$/routers/netcore/sessions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/client_styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/client_styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/generic.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/generic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/client.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
