@@ -8,7 +8,7 @@ import globals
 import logger
 from routers.netcore import sessions
 
-router = APIRouter(prefix="msg")
+router = APIRouter(prefix="/msg")
 
 
 @router.websocket("/ws")
@@ -27,3 +27,6 @@ async def websocket_endpoint(websocket: WebSocket):
             globals.ACTIVE_SESSIONS.remove(current_session)
             # Здесь обработка отключения
             await logger.info(f"WebSocket disconnected: SessionUUID {current_session.UUID}")
+
+@router.post("/send")
+async def 

@@ -1,0 +1,62 @@
+:root {
+    --bgcolor: #252627;
+    --bgcolor1: #343536;
+    --bgcolor2: #454647;
+    --bgcolor3: #555657;
+    --bordercolor: #9f8fac;
+    --bordercolor-active: #8aeef5;
+    --bordercolor-inactive: #695c74;
+    --borderradius: 10px;
+    --bordersize : 2px;
+}
+html {
+    background-color: var(--bgcolor);
+}
+#message-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: var(--borderradius);
+    border: var(--bordersize) solid var(--bordercolor);
+    background-color: var(--bgcolor1);
+}
+#history {
+    min-height: 200px;
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: var(--borderradius);
+    border: var(--bordersize) solid var(--bordercolor);
+    background-color: var(--bgcolor);
+    width: 100%;
+
+
+}
+#send{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+#message-input{
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: var(--borderradius);
+    border: var(--bordersize) solid var(--bordercolor);
+    background-color: var(--bgcolor3);
+    color: var(--color);
+}
+#message-send{
+    /* button element */
+    width: 10%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: var(--borderradius);
+    border: var(--bordersize) solid var(--bordercolor);
+    background-color: var(--bgcolor3);
+    color: var(--color);
+    cursor: pointer;
+    text-align: center;
+}
