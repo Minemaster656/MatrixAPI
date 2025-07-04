@@ -1,13 +1,6 @@
-let httpProtocol = "http://";
-let wsProtocol = "ws://";
-if (window.location.protocol === "https:") {
-    httpProtocol = "https://";
-    wsProtocol = "wss://";
-}
+
 let CONNECTION_NAME
-const apiUrl = httpProtocol + window.location.host + "/api";
-const wsUrlGeneric = wsProtocol + window.location.host;
-const md = window.markdownit();
+
 
 /** @type {WebSocket} */
 let socket;
@@ -56,6 +49,18 @@ function onSocketMessage(message) {
         makeMessage(`Пользователь ${msg_parsed["name"]} присоединился`, "msgtype-join");
         if (!isPageFocused && enableSounds) playAudioFromStatic("join.mp3");
     }
+    else if (msg_parsed.type == "auth") {
+        if (msg_parsed["result"] == "success") {
+            makeMessage("Вы успешно авторизовались", "msgtype-join");
+        }
+        else {
+            makeMessage(`Ошибка авторизации: ${msg_parsed["message"]}`, "msgtype-error");
+        }
+    }
+    else if (msg_parsed.type == "leave") {
+        makeMessage(`Пользователь ${msg_parsed["name"]} покинул чат`, "msgtype-leave");
+    }
+    
 }
 function makeMessage(message, type = "") {
     let msg_container = document.createElement("div");

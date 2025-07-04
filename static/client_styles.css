@@ -119,3 +119,9 @@ body {
     background-color: var(--bgcolor2);
     border-color: var(--bordercolor-active);
 }
+.msgtype-leave{
+    border-color: var(--bordercolor-inactive);
+}
+.msgtype-error{
+    border-color: red;
+}
