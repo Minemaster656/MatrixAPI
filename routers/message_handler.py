@@ -1,3 +1,5 @@
+import json
+
 import fastapi
 from fastapi.responses import FileResponse
 from fastapi import APIRouter, Depends
@@ -15,14 +17,25 @@ router = APIRouter(prefix="/msg")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()  # Принять соединение
     current_session = sessions.Session(websocket)
-    globals.ACTIVE_SESSIONS.append(current_session)
+
+    globals.UNAUTHORIZED_SESSIONS.append(current_session)
     await logger.info(f"WebSocket connected: SessionUUID {current_session.UUID}")
+
     while True:
         try:
             while True:
-                data = await websocket.receive_text()
+                data = await websocket.receive_json()
+                if not current_session.authorized:
+                    if data["type"]=="auth":
+                        if data.get("name"):
+                            globals.UNAUTHORIZED_SESSIONS.remove(current_session)
+                            globals.ACTIVE_SESSIONS.append(current_session)
+                            current_session.authorized=True
+                            await websocket.send_text(json.dumps({"type":"auth","result":"success"}))
+                            for client in globals.ACTIVE_SESSIONS:
+                                await client.send_message(json.dumps({"type": "join", "name": data["name"]}, ensure_ascii=False))
                 # Здесь твоя логика обработки сообщений
-                await websocket.send_text(f"Echo: {data}")
+                # await websocket.send_text(f"Echo: {data}")
         except WebSocketDisconnect:
             globals.ACTIVE_SESSIONS.remove(current_session)
             # Здесь обработка отключения
@@ -33,5 +46,5 @@ async def handle_message(request: fastapi.Request):
     data = await request.json()
     message = data.get("message")
     for client in globals.ACTIVE_SESSIONS:
-        await client.send_message(message)
+        await client.send_message(json.dumps({"type":"message","content":message},ensure_ascii=False))
     return {"status": "Success"}

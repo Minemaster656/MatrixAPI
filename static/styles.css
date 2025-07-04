@@ -2,13 +2,13 @@
     --bgc: #252627;
     --borgercolor: #9f8fac;
     --borderradius: 10px;
-    --bordersize : 2px;
+    --bordersize: 2px;
     --bgc1: #343536;
     --color: #bbc0ca;
     --color-dark: #978f9e;
     --color-link-1: #2d8ec7;
     --color-link-2: #a72bc0;
-    --selection-color : #8aeef5;
+    --selection-color: #8aeef5;
 }
 html {
     color: var(--color);
@@ -27,7 +27,9 @@ a:hover {
 }
 .panel {
     background-color: var(--bgc1);
-    border-radius:var(--borderradius);
+    border-radius: var(--borderradius);
     border: var(--bordersize) solid var(--borgercolor);
-    
 }
+.hidden {
+    display: none;
+}   

@@ -4,10 +4,7 @@
         <title>MatrixAPI :: Web-Client</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <!-- Bootstrap CSS -->
         <link
@@ -18,16 +15,23 @@
         />
         <link rel="stylesheet" href="/static/styles.css" />
         <link rel="stylesheet" href="/static/client_styles.css" />
-        <script src="/static/generic.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
     </head>
     <body>
+        <div id="connection-modal">
+            <h1>Введите имя</h1>
+            <input type="text" name="" id="connection-name-input">
+            <button id="connect">Подключиться</button>
+        </div>
+
         <div class="container">
             <!-- <h1 class="panel" style="margin: 10px; padding: 10px">
                 Внимание! В данный момент клиент предназначен лишь для дебага!!!
             </h1> -->
             <div id="message-block">
+                <input type="checkbox" name="enable-sounds" id="enable-sounds" checked />
+                <label for="enable-sounds">Включить звуки</label>
                 <div id="history"></div>
                 <div id="send">
                     <textarea
@@ -36,16 +40,7 @@
                         placeholder="Введите сообщение... Кнопка отправки или Enter - отправить, Shift+Enter - новая строка. Поддерживается markdown."
                     ></textarea>
                     <button id="message-send">
-                        <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 2L11 13"></path>
                             <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
                         </svg>
@@ -53,7 +48,8 @@
                 </div>
             </div>
         </div>
-        
+        <script src="/static/generic.js"></script>
+        <script src="/static/audioManager.js"></script>
         <script src="/static/client.js"></script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
